@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #2e2e44;
+}
+
+.digital-clock {
+    position: relative;
+    color: #fff;
+    background: #2e2e41;
+    width: 425px;
+    padding: 20px 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.time {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hours,
+.minutes,
+.dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    padding: 0 10px;
+    line-height: 125px;
+}
+
+.hours,
+.minutes {
+    font-size: 6.5rem;
+    width: 125px;
+}
+
+.dots {
+    font-size: 5em;
+    color: gray;
+}
+
+.right-side {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.period,
+.seconds {
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.period {
+    transform: translateY(-20px);
+}
+
+.seconds {
+    transform: translateY(16px);
+}
+
+.dot-menu {
+    z-index: 99;
+    list-style: none;
+    background: red;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock-format-text {
+    color: #efefef;
+    font-size: 0.9em;
+}
+
+.format-switch-btn {
+    width: 35px;
+    height: 15px;
+    background: #485470;
+    border-radius: 75px;
+}
+
+.format-switch-btn::before {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: pink;
+}
+
+.todo,
+.chat {
+    text-decoration: none;
+    font-size: 50px;
+    color: rgb(158, 91, 29);
+}

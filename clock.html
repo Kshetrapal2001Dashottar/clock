@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <link rel="stylesheet" href="clock.css">
+</head>
+
+<body>
+    <a class="todo" href="../TODO/todo.html">Click Here For TODO-List</a>
+    <div class="digital-clock">
+
+        <select name="" id="select">
+            <option value="12">12-Hour</option>
+            <option value="24">24-Hour</option>
+        </select>
+
+        <div class="time">
+            <span class="hours">00</span>
+            <span class="dots">:</span>
+            <span class="minutes">00</span>
+            <div class="right-side">
+                <span class="period">AM/PM</span>
+                <span class="seconds">00</span>
+            </div>
+        </div>
+    </div>
+    <a class="chat" href="../Week4_Chatbot/chatbot.html">Click here for chatbot</a>
+
+    <script>
+
+        function clock() {
+            const today = new Date();
+            let hours = today.getHours();
+            const minutes = today.getMinutes();
+            const seconds = today.getSeconds();
+            const drop = document.getElementById("select").value;
+
+            let period = "";
+            // Setting AM and PM
+            if (hours >= 12) {
+                period = "PM";
+            } else {
+                period = "AM";
+            }
+
+            drop == "12" ? (hours = hours > 12 ? hours % 12 : hours) : hours
+
+            document.querySelector(".hours").innerHTML = hours < 10 ? "0" + hours : hours;
+            document.querySelector(".minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+            document.querySelector(".seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+            document.querySelector(".period").innerHTML = drop === "12" ? period : '';
+
+        }
+        let updateClock = setInterval(clock, 1000);
+
+    </script>
+</body>
+
+</html>
